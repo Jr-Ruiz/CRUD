@@ -16,34 +16,41 @@
     </Window.Resources>
 
     <Grid>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height ="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Name="ID" Content="ID" Style="{StaticResource Espaciados}"/>
-        <Label Grid.Row="1" Grid.Column="0" Name="Producto" Content="Producto" Style="{StaticResource Espaciados}"/>
-        <Label Grid.Row="2" Grid.Column="0" Name="Precio" Content="Precio" Style="{StaticResource Espaciados}"/>
+        <Label Grid.Row="0" Grid.Column="0" x:Name="labelID" Content="ID" Style="{StaticResource Espaciado}"/>
+        <Label Grid.Row="1" Grid.Column="0" x:Name="labelProducto" Content="Producto" Style="{StaticResource Espaciado}"/>
+        <Label Grid.Row="2" Grid.Column="0" x:Name="labelPrecio" Content="Precio" Style="{StaticResource Espaciado}"/>
 
-        <TextBox Grid.Row="0" Grid.Column="1" Name="TextoID" Style="{StaticResource Espaciados}" />
-        <Button Grid.Row="0" Grid.Column="2" Name="BtnBuscar" Content="Buscar Producto" Style="{StaticResource Espaciados}" Click="BtnBuscar_Click" />
-        <TextBox Grid.Row="1" Grid.Column="1" Name="TextoProducto" Grid.ColumnSpan="2" Style="{StaticResource Espaciados}" />
-        <TextBox Grid.Row="2" Grid.Column="1" Name="TextoPrecio" Grid.ColumnSpan="2" Style="{StaticResource Espaciados}" />
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="TextoID" Style="{StaticResource Espaciado}"/>
+        <Button Grid.Row="0" Grid.Column="2" Name="BtnBuscar" Content="Buscar Producto" Style="{StaticResource Espaciado}" Click="BtnBuscar_Click"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="TextoProducto" Style="{StaticResource Espaciado}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="TextoPrecio" Style="{StaticResource Espaciado}"/>
 
-        <Button Grid.Row="3" Grid.Column="0" Name="BtnAgregar" Content="Añadir" Style="{StaticResource Espaciados}" Click="BtnAgregar_Click" />
-        <Button Grid.Row="3" Grid.Column="1" Name="BtnEditar" Content="Editar" Style="{StaticResource Espaciados}" Click="BtnEditar_Click" />
-        <Button Grid.Row="3" Grid.Column="2" Name="BtnEliminar" Content="Eliminar" Style="{StaticResource Espaciados}" Click="BtnEliminar_Click"/>
-
-        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"  Name="Listado" Style="{StaticResource Espaciados}" />
-
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" x:Name="AccionesStackPanel">
+            <Button x:Name="BtnAnyadir" Style="{StaticResource BotonesStackPanel}" Click="BtnAgregar_Click">Añadir</Button>
+            <Button x:Name="BtnEditar" Style="{StaticResource BotonesStackPanel}" Click="BtnEditar_Click">Editar</Button>
+            <Button x:Name="BtnEliminar" Style="{StaticResource BotonesStackPanel}" Click="BtnEliminar_Click">Eliminar</Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" x:Name="ConfirmStackPanel">
+            <Button x:Name="BtnConfirmar" Style="{StaticResource BotonesStackPanel}" Click="BtnConfirmar_Click">Confirmar</Button>
+            <Button x:Name="BtnCancelar" Style="{StaticResource BotonesStackPanel}" Click="BtnCancelar_Click" Cancelar</Button>
+        </StackPanel>
+        
+        <DataGrid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"  Name="Listado"/>
     </Grid>
 </Window>
