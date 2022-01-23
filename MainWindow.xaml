@@ -48,7 +48,7 @@
         
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" x:Name="ConfirmStackPanel">
             <Button x:Name="BtnConfirmar" Style="{StaticResource BotonesStackPanel}" Click="BtnConfirmar_Click">Confirmar</Button>
-            <Button x:Name="BtnCancelar" Style="{StaticResource BotonesStackPanel}">Cancelar</Button>
+            <Button x:Name="BtnCancelar" Style="{StaticResource BotonesStackPanel}" Click="BtnCancelar_Click" Cancelar</Button>
         </StackPanel>
         
         <DataGrid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"  Name="Listado"/>
